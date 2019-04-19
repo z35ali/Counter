@@ -15,9 +15,9 @@ class MainActivity : AppCompatActivity() {
 
     var prefs: SharedPreferences? = null
 
-    fun reset(view : View){
+    fun reset(view: View) {
         count = 0
-        textView.setText(""+count)
+        textView.setText("" + count)
 
         // Put count in SharedPrefs
         val editor = prefs!!.edit()
@@ -25,9 +25,9 @@ class MainActivity : AppCompatActivity() {
         editor.apply()
     }
 
-    fun plusOne(view : View){
+    fun plusOne(view: View) {
         count++
-        textView.setText(""+count)
+        textView.setText("" + count)
 
         // Put count in SharedPrefs
         val editor = prefs!!.edit()
@@ -35,17 +35,15 @@ class MainActivity : AppCompatActivity() {
         editor.apply()
     }
 
-    fun minusOne(view : View){
+    fun minusOne(view: View) {
         count--
-        textView.setText(""+count)
+        textView.setText("" + count)
 
         // Put count in SharedPrefs
         val editor = prefs!!.edit()
         editor.putInt(COUNT_PREF, count)
         editor.apply()
     }
-
-
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,7 +55,7 @@ class MainActivity : AppCompatActivity() {
         count = prefs!!.getInt(COUNT_PREF, count)
 
         var textView = findViewById<TextView>(R.id.textView)
-        textView.setText(""+count)
+        textView.setText("" + count)
 
     }
 }
